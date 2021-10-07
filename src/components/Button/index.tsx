@@ -2,9 +2,9 @@ import * as S from './styles'
 
 export type ButtonProps = {
   children?: React.ReactNode
+  icon?: React.ReactNode
   size?: 'small' | 'medium' | 'large'
   fullWidth?: boolean
-  icon?: React.ReactNode
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
