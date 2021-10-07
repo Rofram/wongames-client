@@ -1,17 +1,17 @@
-import styled, { css } from 'styled-components'
+import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
 
-import { HeadingProps } from '.'
+import { HeadingProps, LineColors } from '.'
 
 const wrapperModifiers = {
-  lineLeft: css`
-    padding-left: ${({ theme }) => theme.spacings.xxsmall};
-    border-left: 0.7rem solid ${({ theme }) => theme.colors.secondary};
+  lineLeft: (theme: DefaultTheme, lineColor: LineColors) => css`
+    padding-left: ${theme.spacings.xxsmall};
+    border-left: 0.7rem solid ${theme.colors[lineColor]};
   `,
 
-  lineBottom: css`
+  lineBottom: (theme: DefaultTheme, lineColor: LineColors) => css`
     position: relative;
-    margin-bottom: ${({ theme }) => theme.spacings.medium};
+    margin-bottom: ${theme.spacings.medium};
 
     &::after {
       content: '';
@@ -19,22 +19,33 @@ const wrapperModifiers = {
       left: 0;
       bottom: -0.8rem;
       width: 5rem;
-      border-bottom: 0.5rem solid ${({ theme }) => theme.colors.primary};
+      border-bottom: 0.5rem solid ${theme.colors[lineColor]};
     }
+  `,
+  small: css`
+    font-size: ${({ theme }) => theme.font.sizes.medium};
+
+    &::after {
+      width: 3rem;
+    }
+  `,
+  medium: css`
+    font-size: ${({ theme }) => theme.font.sizes.xlarge};
   `
 }
 
 export const Wrapper = styled.h2<HeadingProps>`
-  ${({ theme, color, lineLeft, lineBottom }) => css`
+  ${({ theme, size, color, lineLeft, lineBottom, lineColor }) => css`
     color: ${theme.colors[color!]};
-    font-size: ${theme.font.sizes.xlarge};
 
     ${media.greaterThan('medium')`
       font-size: ${theme.font.sizes.xxlarge};
     `}
 
-    ${lineLeft && wrapperModifiers.lineLeft}
+    ${lineLeft && wrapperModifiers.lineLeft(theme, lineColor!)}
 
-    ${lineBottom && wrapperModifiers.lineBottom}
+    ${lineBottom && wrapperModifiers.lineBottom(theme, lineColor!)}
+
+    ${!!size && wrapperModifiers[size]}
   `}
 `

@@ -18,3 +18,10 @@ export const Default: Story<HeadingProps> = (args) => <Heading {...args} />
 Default.args = {
   children: 'Most Popular'
 }
+
+Default.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'dark'
+  }
+}
