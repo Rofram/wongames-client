@@ -26,8 +26,8 @@ export default styled.div<MediaMatchProps>`
   ${({ lessThan, greaterThan }) => css`
     display: none;
 
-    ${!!lessThan && mediaMatchModifier.lessThan(lessThan)}
+    ${lessThan && mediaMatchModifier.lessThan(lessThan)}
 
-    ${!!greaterThan && mediaMatchModifier.greaterThan(greaterThan)}
+    ${greaterThan && mediaMatchModifier.greaterThan(greaterThan)}
   `}
 `
