@@ -68,6 +68,10 @@ exports[`<Banner /> should render the heading 1`] = `
   font-weight: 600;
 }
 
+@media (max-width:1170px) {
+
+}
+
 @media (max-width:768px) {
   .c0 {
     box-shadow: 0px 0.4rem 0.5rem rgba(0,0,0,0.2);
