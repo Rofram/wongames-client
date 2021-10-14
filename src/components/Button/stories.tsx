@@ -11,6 +11,9 @@ export default {
     },
     icon: {
       type: ''
+    },
+    as: {
+      type: ''
     }
   }
 } as Meta
