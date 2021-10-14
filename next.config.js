@@ -8,6 +8,6 @@ module.exports = withPWA({
     disable: !isProd
   },
   images: {
-    domains: ['images.unsplash.com']
+    domains: ['images.unsplash.com', 'source.unsplash.com']
   }
 })
