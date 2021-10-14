@@ -5,43 +5,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import GameCardSlider from '.'
 import theme from 'styles/theme'
 
-const items = [
-  {
-    title: 'Population Zero',
-    developer: 'Rockstar Games',
-    img: 'https://source.unsplash.com/user/willianjusten/300x140',
-    price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
-  },
-  {
-    title: 'Population Zero',
-    developer: 'Rockstar Games',
-    img: 'https://source.unsplash.com/user/willianjusten/300x141',
-    price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
-  },
-  {
-    title: 'Population Zero',
-    developer: 'Rockstar Games',
-    img: 'https://source.unsplash.com/user/willianjusten/300x142',
-    price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
-  },
-  {
-    title: 'Population Zero',
-    developer: 'Rockstar Games',
-    img: 'https://source.unsplash.com/user/willianjusten/300x143',
-    price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
-  },
-  {
-    title: 'Population Zero',
-    developer: 'Rockstar Games',
-    img: 'https://source.unsplash.com/user/willianjusten/300x144',
-    price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
-  }
-]
+import items from './mock'
 
 describe('<GameCardSlider />', () => {
   it('should render arrows white', () => {
@@ -56,10 +20,10 @@ describe('<GameCardSlider />', () => {
     })
   })
 
-  it('should render 4 cards', () => {
+  it('should render 4 active cards', () => {
     const { container } = renderWithTheme(<GameCardSlider items={items} />)
 
-    expect(container.querySelectorAll('.slick-slide')).toHaveLength(5)
+    expect(container.querySelectorAll('.slick-slide')).toHaveLength(6)
 
     expect(container.querySelectorAll('.slick-active')).toHaveLength(4)
   })

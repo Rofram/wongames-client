@@ -96,6 +96,15 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
   background-position: center center;
 }
 
+.c12 {
+  width: 100%;
+  height: 23rem;
+  background-color: #8F8F8F;
+  background-image: url(https://source.unsplash.com/user/willianjusten/1042x581);
+  background-size: cover;
+  background-position: center center;
+}
+
 .c5 {
   width: 100%;
   background-color: rgba(0,0,0,0.7);
@@ -306,6 +315,12 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
 }
 
 @media (min-width:768px) {
+  .c12 {
+    height: 58rem;
+  }
+}
+
+@media (min-width:768px) {
   .c5 {
     border-radius: 0 0 0.4rem 0.4rem;
     padding: 4.0rem;
@@ -469,6 +484,54 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
               </main>
             </div>
           </div>
+          <div
+            aria-hidden="true"
+            class="slick-slide"
+            data-index="2"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <main
+                class="c2 c3"
+              >
+                <div
+                  aria-label="Defy death 3"
+                  class="c12"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x581"
+                />
+                <div
+                  class="c5"
+                >
+                  <h2
+                    class="c6"
+                  >
+                    Defy death 3
+                  </h2>
+                  <h3
+                    class="c7"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="c8"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </main>
+            </div>
+          </div>
         </div>
       </div>
       <ul
@@ -487,6 +550,13 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
         >
           <button>
             2
+          </button>
+        </li>
+        <li
+          class=""
+        >
+          <button>
+            3
           </button>
         </li>
       </ul>

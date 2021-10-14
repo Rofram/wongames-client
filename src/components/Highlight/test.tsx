@@ -4,27 +4,19 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import Highlight from '.'
 import * as S from './styles'
 
-const props = {
-  title: 'Heading 1',
-  subtitle: 'Heading 2',
-  backgroundImage: '/img/red_dead_background.png',
-  buttonLabel: 'Buy now',
-  buttonLink: '/rdr2'
-}
+import props from './mock'
 
 describe('<Highlight />', () => {
   it('should render the headings and button', () => {
     renderWithTheme(<Highlight {...props} />)
 
     expect(
-      screen.getByRole('heading', { name: /heading 1/i })
+      screen.getByRole('heading', { name: props.title })
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { name: /heading 1/i })
+      screen.getByRole('link', { name: props.buttonLabel })
     ).toBeInTheDocument()
-
-    expect(screen.getByRole('link', { name: /Buy now/i })).toBeInTheDocument()
   })
 
   it('should render background image', () => {
