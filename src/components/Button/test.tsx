@@ -3,6 +3,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
 
 import Button from '.'
+import theme from 'styles/theme'
 
 describe('<Button />', () => {
   it('should render the medium button by default', () => {
@@ -44,13 +45,34 @@ describe('<Button />', () => {
     })
   })
 
-  it('should render a icon version button', () => {
+  it('should render a icon version', () => {
     renderWithTheme(
       <Button icon={<AddShoppingCart data-testid="icon" />}>Buy now</Button>
     )
 
     expect(screen.getByText(/buy now/i)).toBeInTheDocument()
     expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
+
+  it('should render a minimal version', () => {
+    renderWithTheme(
+      <Button icon={<AddShoppingCart data-testid="icon" />} minimal>
+        Buy now
+      </Button>
+    )
+
+    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyle({
+      background: 'none',
+      color: theme.colors.primary
+    })
+
+    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule(
+      'background',
+      'none',
+      {
+        modifier: ':hover'
+      }
+    )
   })
 
   it('should render Button as a link', () => {
