@@ -22,6 +22,8 @@ exports[`<Banner /> should render the heading 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   height: 5rem;
   font-size: 1.6rem;
   padding: 0.8rem 5.6rem;

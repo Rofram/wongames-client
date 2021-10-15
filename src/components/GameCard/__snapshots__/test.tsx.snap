@@ -28,6 +28,8 @@ exports[`<GameCard /> should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   height: 3rem;
   font-size: 1.2rem;
 }
