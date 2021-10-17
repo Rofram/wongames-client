@@ -31,16 +31,19 @@ const wrapperModifiers = {
   `,
   medium: css`
     font-size: ${({ theme }) => theme.font.sizes.xlarge};
+
+    ${media.greaterThan('medium')`
+      font-size: ${({ theme }) => theme.font.sizes.xxlarge};
+    `}
+  `,
+  huge: css`
+    font-size: ${({ theme }) => theme.font.sizes.huge};
   `
 }
 
 export const Wrapper = styled.h2<HeadingProps>`
   ${({ theme, size, color, lineLeft, lineBottom, lineColor }) => css`
     color: ${theme.colors[color!]};
-
-    ${media.greaterThan('medium')`
-      font-size: ${theme.font.sizes.xxlarge};
-    `}
 
     ${lineLeft && wrapperModifiers.lineLeft(theme, lineColor!)}
 
