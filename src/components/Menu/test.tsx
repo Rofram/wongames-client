@@ -38,7 +38,7 @@ describe('<Menu />', () => {
     renderWithTheme(<Menu />)
 
     // verificar se o elemento de register box está no documento
-    expect(screen.getByText(/log in now/i)).toBeInTheDocument()
+    expect(screen.getByText(/sign in now/i)).toBeInTheDocument()
     expect(screen.getByText(/sign up/i)).toBeInTheDocument()
 
     // verificar se os elementos wishlist e account não estão no documento
