@@ -41,6 +41,11 @@ export const SectionBanner = styled.section`
 export const SectionNews = styled(Sections)`
   ${({ theme }) => css`
     margin-bottom: calc(${theme.spacings.xxlarge} * 2);
+
+    ${HeadingStyles.Wrapper} {
+      color: ${theme.colors.white};
+    }
+
     ${media.greaterThan('large')`
       margin-top: -13rem;
     `}
