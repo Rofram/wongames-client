@@ -6,38 +6,32 @@ import props from './mock'
 
 import Home from '.'
 
+jest.mock('components/BannerSlider', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="BannerSlider" />
+    }
+  }
+})
+
+jest.mock('components/Showcase', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Showcase" />
+    }
+  }
+})
+
 describe('<Home />', () => {
   it('should render menu and footer', () => {
     renderWithTheme(<Home {...props} />)
 
-    // menu
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
-
-    // footer
-    expect(
-      screen.getByRole('heading', { name: /contact/i })
-    ).toBeInTheDocument()
+    // banner slider
+    expect(screen.getByTestId('BannerSlider')).toBeInTheDocument()
 
     // should render sections
-    expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument()
-
-    expect(
-      screen.getByRole('heading', { name: /most popular/i })
-    ).toBeInTheDocument()
-
-    expect(
-      screen.getByRole('heading', { name: /upcoming/i })
-    ).toBeInTheDocument()
-
-    expect(
-      screen.getByRole('heading', { name: /free games/i })
-    ).toBeInTheDocument()
-
-    // banner
-    expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
-    // card game ( 5 sections com 4 cards cada = 5x4 = 20)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(20)
-    // highlight
-    expect(screen.getAllByText(/read dead/i)).toHaveLength(3)
+    expect(screen.getAllByTestId('Showcase')).toHaveLength(5)
   })
 })
