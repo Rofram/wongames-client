@@ -79,8 +79,8 @@ const Gallery = ({ items }: GalleryProps) => {
             src={item.src}
             key={`thumb-${index}`}
             alt={`Thumb - ${item.alt}`}
-            layout="fill"
-            objectFit="cover"
+            width={295}
+            height={165}
             onClick={() => {
               setIsOpen(true)
               slider.current!.slickGoTo(index, true)

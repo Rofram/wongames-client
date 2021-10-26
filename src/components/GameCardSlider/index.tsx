@@ -6,9 +6,11 @@ import Slider, { SliderSettings } from 'components/Slider'
 
 import * as S from './styles'
 
+export type SliderArrowColor = 'white' | 'black'
+
 export type GameCardSliderProps = {
   items: GameCardProps[]
-  color?: 'white' | 'black'
+  color?: SliderArrowColor
 }
 
 const settings: SliderSettings = {

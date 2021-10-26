@@ -1,5 +1,5 @@
 import { GameCardProps } from 'components/GameCard'
-import GameCardSlider from 'components/GameCardSlider'
+import GameCardSlider, { SliderArrowColor } from 'components/GameCardSlider'
 import Heading from 'components/Heading'
 import Highlight, { HighlightProps } from 'components/Highlight'
 
@@ -9,9 +9,15 @@ export type ShowcaseProps = {
   title?: string
   highlight?: HighlightProps
   games?: GameCardProps[]
+  sliderArrowColor?: SliderArrowColor
 }
 
-const Showcase = ({ title, highlight, games }: ShowcaseProps) => (
+const Showcase = ({
+  title,
+  highlight,
+  games,
+  sliderArrowColor = 'white'
+}: ShowcaseProps) => (
   <S.Wrapper>
     {title && (
       <Heading lineLeft lineColor="secondary">
@@ -20,7 +26,7 @@ const Showcase = ({ title, highlight, games }: ShowcaseProps) => (
     )}
 
     {highlight && <Highlight {...highlight} />}
-    {games && <GameCardSlider items={games} />}
+    {games && <GameCardSlider items={games} color={sliderArrowColor} />}
   </S.Wrapper>
 )
 
