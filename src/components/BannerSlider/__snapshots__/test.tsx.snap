@@ -84,7 +84,7 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
   width: 100%;
   height: 23rem;
   background-color: #8F8F8F;
-  background-image: url(https://source.unsplash.com/user/willianjusten/1042x580);
+  background-image: url(https://images.gog-statics.com/9717921d3268d2cad294b626756400a3a1f3e46bf153330c5581f91a5c50446a_bg_crop_1366x655.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -396,10 +396,10 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
                 class="c2 c3"
               >
                 <div
-                  aria-label="Defy death 1"
+                  aria-label="Cyberpunk 2077"
                   class="c4"
                   role="img"
-                  src="https://source.unsplash.com/user/willianjusten/1042x580"
+                  src="https://images.gog-statics.com/9717921d3268d2cad294b626756400a3a1f3e46bf153330c5581f91a5c50446a_bg_crop_1366x655.jpg"
                 />
                 <div
                   class="c5"
@@ -407,22 +407,16 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
                   <h2
                     class="c6"
                   >
-                    Defy death 1
+                    Cyberpunk 2077
                   </h2>
                   <h3
                     class="c7"
                   >
-                    <p>
-                      Play the new 
-                      <strong>
-                        CrashLands
-                      </strong>
-                       season
-                    </p>
+                    Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification.
                   </h3>
                   <a
                     class="c8"
-                    href="/games/defy-death"
+                    href="/game/cyberpunk2077"
                   >
                     <span>
                       Buy now
@@ -476,7 +470,7 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
                   </h3>
                   <a
                     class="c8"
-                    href="/games/defy-death"
+                    href="/game/defy-death"
                   >
                     <span>
                       Buy now
@@ -524,7 +518,7 @@ exports[`<BannerSlider /> should render with 1 active item 1`] = `
                   </h3>
                   <a
                     class="c8"
-                    href="/games/defy-death"
+                    href="/game/defy-death"
                   >
                     <span>
                       Buy now
