@@ -24,6 +24,7 @@ export const Cover = styled.div<CoverProps>`
     background-image: url(${src});
     background-size: cover;
     background-position: top center;
+    background-attachment: fixed;
     opacity: 0.4;
 
     ${media.greaterThan('medium')`
@@ -63,15 +64,4 @@ export const SectionDescription = styled(Section)`
   `}
 `
 
-export const SectionGameDetails = styled(Section)`
-  ${({ theme }) => css`
-    > div {
-      padding-top: ${theme.spacings.xlarge};
-      border-bottom: 0ch.1rem solid rgba(181, 181, 181, 0.3);
-
-      ${media.greaterThan('medium')`
-        padding-top: calc(${theme.spacings.xlarge} * 2);
-      `}
-    }
-  `}
-`
+export const SectionGameDetails = styled(Section)``
