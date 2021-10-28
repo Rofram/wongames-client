@@ -24,12 +24,12 @@ export const Cover = styled.div<CoverProps>`
     background-image: url(${src});
     background-size: cover;
     background-position: top center;
-    background-attachment: fixed;
     opacity: 0.4;
 
     ${media.greaterThan('medium')`
       height: 70rem;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+      background-attachment: fixed;
     `}
   `}
 `
