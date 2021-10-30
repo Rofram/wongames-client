@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react'
 import GameItem, { GameItemProps } from '.'
 
-import gameItemMock from './mock'
+import gameItemMock, { paymentInfoMock } from './mock'
 
 export default {
   title: 'GameItem',
@@ -9,7 +9,9 @@ export default {
   args: gameItemMock
 } as Meta
 
-export const Default: Story<GameItemProps> = (args) => <GameItem {...args} />
+export const Default: Story<GameItemProps> = (args) => (
+  <GameItem {...args} paymentInfo={undefined} />
+)
 
 export const WithPayment: Story<GameItemProps> = (args) => (
   <GameItem {...args} />
@@ -17,10 +19,5 @@ export const WithPayment: Story<GameItemProps> = (args) => (
 
 WithPayment.args = {
   downloadLink: 'https:wongames.com/game/download/akgfjagfjkdasgfj',
-  paymentInfo: {
-    flag: 'mastercard',
-    img: '/img/master-card.png',
-    number: '**** **** **** 1234',
-    purchaseDate: 'Purchase made on 05/01/2020 at 20:32'
-  }
+  paymentInfo: paymentInfoMock
 }

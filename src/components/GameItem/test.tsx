@@ -3,7 +3,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 
 import GameItem from '.'
 
-import props from './mock'
+import props, { paymentInfoMock } from './mock'
 
 describe('<GameItem />', () => {
   it('should render the item', () => {
@@ -32,22 +32,14 @@ describe('<GameItem />', () => {
   })
 
   it('should render the payment info', () => {
-    const paymentInfo = {
-      flag: 'mastercard',
-      img: '/img/master-card.png',
-      number: '**** **** **** 1234',
-      purchaseDate: 'Purchase made on 05/01/2020 at 20:32'
-    }
+    renderWithTheme(<GameItem {...props} paymentInfo={paymentInfoMock} />)
 
-    renderWithTheme(<GameItem {...props} paymentInfo={paymentInfo} />)
+    expect(
+      screen.getByRole('img', { name: paymentInfoMock.flag })
+    ).toHaveAttribute('src', paymentInfoMock.img)
 
-    expect(screen.getByRole('img', { name: paymentInfo.flag })).toHaveAttribute(
-      'src',
-      paymentInfo.img
-    )
+    expect(screen.getByText(paymentInfoMock.number)).toBeInTheDocument()
 
-    expect(screen.getByText(paymentInfo.number)).toBeInTheDocument()
-
-    expect(screen.getByText(paymentInfo.purchaseDate)).toBeInTheDocument()
+    expect(screen.getByText(paymentInfoMock.purchaseDate)).toBeInTheDocument()
   })
 })
