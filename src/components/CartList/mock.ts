@@ -8,9 +8,10 @@ const mock: CartListProps = {
 }
 
 export const withPaymentInfo: CartListProps = {
-  items: Array.from({ length: 5 }, () =>
-    Object.assign(gameItemMock, { paymentInfo: paymentInfoMock })
-  ),
+  items: Array.from({ length: 5 }, () => ({
+    ...gameItemMock,
+    paymentInfo: paymentInfoMock
+  })),
   total: '$300,00'
 }
 
