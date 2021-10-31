@@ -9,15 +9,13 @@ export default {
   args: gameItemMock
 } as Meta
 
-export const Default: Story<GameItemProps> = (args) => (
-  <GameItem {...args} paymentInfo={undefined} />
-)
+export const Default: Story<GameItemProps> = (args) => <GameItem {...args} />
 
 export const WithPayment: Story<GameItemProps> = (args) => (
   <GameItem {...args} />
 )
 
 WithPayment.args = {
-  downloadLink: 'https:wongames.com/game/download/akgfjagfjkdasgfj',
+  downloadLink: 'https://wongames.com/game/download/akgfjagfjkdasgfj',
   paymentInfo: paymentInfoMock
 }
