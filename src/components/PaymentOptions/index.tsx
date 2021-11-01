@@ -36,7 +36,7 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
             <S.CardItem key={number}>
               <S.CardInfo>
                 <Image src={img} alt={flag} width={56} height={34} />
-                {number}
+                <span>{number}</span>
               </S.CardInfo>
               <Radio
                 name="credit-card"

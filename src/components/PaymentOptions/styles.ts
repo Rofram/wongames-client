@@ -39,8 +39,8 @@ export const CardInfo = styled.span`
     display: flex;
     align-items: center;
 
-    img {
-      margin-right: ${theme.spacings.xxsmall};
+    span {
+      margin-left: ${theme.spacings.xxsmall};
     }
   `}
 `
