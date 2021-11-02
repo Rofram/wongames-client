@@ -61,10 +61,10 @@ exports[`<Empty /> should render correctly 1`] = `
 }
 
 .c3 {
-  color: #FAFAFA;
   font-size: 1.8rem;
   font-weight: 300;
   margin-bottom: 3.2rem;
+  color: #FAFAFA;
 }
 
 <main
@@ -84,6 +84,7 @@ exports[`<Empty /> should render correctly 1`] = `
   </h2>
   <p
     class="c3"
+    color="white"
   >
     Unfortunately we couldn't find any results for your search.
   </p>

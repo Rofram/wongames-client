@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 import image from 'next/image'
 
+import { EmptyProps } from '.'
+
 export const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
@@ -19,11 +21,21 @@ export const Title = styled.h2`
   `}
 `
 
-export const Description = styled.p`
-  ${({ theme }) => css`
-    color: ${theme.colors.white};
+const descriptionModifier = {
+  white: css`
+    color: ${({ theme }) => theme.colors.white};
+  `,
+  black: css`
+    color: ${({ theme }) => theme.colors.black};
+  `
+}
+
+export const Description = styled.p<Pick<EmptyProps, 'color'>>`
+  ${({ theme, color }) => css`
     font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.light};
     margin-bottom: ${theme.spacings.medium};
+
+    ${descriptionModifier[color!]}
   `}
 `

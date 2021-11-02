@@ -6,9 +6,15 @@ export type EmptyProps = {
   title: string
   description: string
   hasLink?: boolean
+  color?: 'white' | 'black'
 }
 
-const Empty = ({ title, description, hasLink }: EmptyProps) => (
+const Empty = ({
+  title,
+  description,
+  hasLink,
+  color = 'white'
+}: EmptyProps) => (
   <S.Wrapper>
     <S.Image
       src="/img/empty.svg"
@@ -19,7 +25,7 @@ const Empty = ({ title, description, hasLink }: EmptyProps) => (
 
     <S.Title>{title}</S.Title>
 
-    <S.Description>{description}</S.Description>
+    <S.Description color={color}>{description}</S.Description>
 
     {hasLink && (
       <Link href="/" passHref>
