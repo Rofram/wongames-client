@@ -6,7 +6,6 @@ type RadioValue = string | ReadonlyArray<string> | number
 export type RadioProps = {
   onCheck?: (valor?: RadioValue) => void
   label?: string
-  labelFor?: string
   labelColor?: 'black' | 'white'
   value?: RadioValue
 } & InputHTMLAttributes<HTMLInputElement>
@@ -14,7 +13,8 @@ export type RadioProps = {
 const Radio = ({
   onCheck,
   label,
-  labelFor,
+  name,
+  id,
   labelColor = 'white',
   value,
   ...props
@@ -27,13 +27,14 @@ const Radio = ({
     <S.Wrapper>
       <S.Input
         type="radio"
-        id={labelFor}
+        id={id}
+        name={name}
         onChange={onChange}
         value={value}
         {...props}
       />
-      {label && labelFor && (
-        <S.Label htmlFor={labelFor} labelColor={labelColor}>
+      {label && (
+        <S.Label htmlFor={id} labelColor={labelColor}>
           {label}
         </S.Label>
       )}
