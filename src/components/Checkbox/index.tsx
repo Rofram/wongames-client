@@ -5,7 +5,6 @@ export type CheckboxProps = {
   onCheck?: (status: boolean) => void
   isChecked?: boolean
   label?: string
-  labelFor?: string
   labelColor?: 'black' | 'white'
   value?: string | ReadonlyArray<string> | number
 } & InputHTMLAttributes<HTMLInputElement>
@@ -14,7 +13,7 @@ const Checkbox = ({
   onCheck,
   isChecked = false,
   label,
-  labelFor,
+  name,
   labelColor = 'white',
   value,
   ...props
@@ -30,14 +29,15 @@ const Checkbox = ({
     <S.Wrapper>
       <S.Input
         type="checkbox"
-        id={labelFor}
+        id={name}
+        name={name}
         onChange={onChange}
         checked={checked}
         value={value}
         {...props}
       />
-      {label && labelFor && (
-        <S.Label htmlFor={labelFor} labelColor={labelColor}>
+      {label && (
+        <S.Label htmlFor={name} labelColor={labelColor}>
           {label}
         </S.Label>
       )}
