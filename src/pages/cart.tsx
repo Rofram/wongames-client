@@ -1,9 +1,9 @@
-import Cart, { CartTemplateProps } from 'templates/Cart'
+import CartTemplate, { CartTemplateProps } from 'templates/Cart'
 
 import cartTemplateMock from 'templates/Cart/mock'
 
 export default function CartPage(props: CartTemplateProps) {
-  return <Cart {...props} />
+  return <CartTemplate {...props} />
 }
 
 export async function getServerSideProps() {

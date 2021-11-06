@@ -1,9 +1,9 @@
-import Home, { HomeTemplateProps } from 'templates/Home'
+import HomeTemplate, { HomeTemplateProps } from 'templates/Home'
 
 import homePropsMock from 'templates/Home/mock'
 
 export default function Index(props: HomeTemplateProps) {
-  return <Home {...props} />
+  return <HomeTemplate {...props} />
 }
 
 export function getStaticProps() {
