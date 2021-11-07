@@ -29,4 +29,10 @@ describe('<CardList />', () => {
 
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('should render the button', () => {
+    renderWithTheme(<CartList {...props} hasButton />)
+
+    expect(screen.getByLabelText(/buy it now/i)).toBeInTheDocument()
+  })
 })
