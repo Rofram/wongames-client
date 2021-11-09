@@ -15,6 +15,15 @@ jest.mock('components/GameItem', () => {
   }
 })
 
+jest.mock('components/Empty', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Empty" />
+    }
+  }
+})
+
 describe('<CardList />', () => {
   it('should render the card list', () => {
     const { container } = renderWithTheme(<CartList {...props} />)
@@ -34,5 +43,13 @@ describe('<CardList />', () => {
     renderWithTheme(<CartList {...props} hasButton />)
 
     expect(screen.getByLabelText(/buy it now/i)).toBeInTheDocument()
+  })
+
+  it('should render <Empty /> with no items in cart', () => {
+    renderWithTheme(<CartList {...props} items={[]} />)
+
+    expect(screen.getByTestId('Empty')).toBeInTheDocument()
+
+    expect(screen.queryByText(/total/i)).not.toBeInTheDocument()
   })
 })

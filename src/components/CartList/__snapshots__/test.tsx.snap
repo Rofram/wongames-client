@@ -46,7 +46,7 @@ exports[`<CardList /> should render the card list 1`] = `
   }
 }
 
-<main
+<div
   class="c0"
 >
   <div
@@ -74,5 +74,5 @@ exports[`<CardList /> should render the card list 1`] = `
       $250,00
     </span>
   </div>
-</main>
+</div>
 `
