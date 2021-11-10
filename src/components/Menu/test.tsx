@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import Menu from '.'
@@ -41,9 +42,15 @@ describe('<Menu />', () => {
     expect(screen.getByText(/sign in now/i)).toBeInTheDocument()
     expect(screen.getByText(/sign up/i)).toBeInTheDocument()
 
+    userEvent.click(screen.getByLabelText(/open menu/i))
+
     // verificar se os elementos wishlist e account não estão no documento
-    expect(screen.queryByText(/wishlist/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/account/i)).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('link', { name: /wishlist/i })
+    ).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('link', { name: /my profile/i })
+    ).not.toBeInTheDocument()
   })
 
   it('should show wishlist and account when logged in', () => {
@@ -53,8 +60,12 @@ describe('<Menu />', () => {
     expect(screen.queryByText(/log in now/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument()
 
+    userEvent.click(screen.getByLabelText(/open menu/i))
+
     // verificar se wishlist e account foram adicionados
-    expect(screen.getByText(/wishlist/i)).toBeInTheDocument()
-    expect(screen.getByText(/account/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /wishlist/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /my profile/i })
+    ).toBeInTheDocument()
   })
 })
