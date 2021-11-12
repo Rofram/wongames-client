@@ -23,7 +23,9 @@ describe('<GameCardSlider />', () => {
   it('should render 4 active cards', () => {
     const { container } = renderWithTheme(<GameCardSlider items={items} />)
 
-    expect(container.querySelectorAll('.slick-slide')).toHaveLength(6)
+    expect(container.querySelectorAll('.slick-slide')).toHaveLength(
+      items.length
+    )
 
     expect(container.querySelectorAll('.slick-active')).toHaveLength(4)
   })
