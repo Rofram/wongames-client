@@ -16,8 +16,8 @@ export default {
 
 export const Default: Story<CheckboxProps> = (args) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-    <Checkbox isChecked {...args} label="Action" labelFor="Action" />
-    <Checkbox {...args} label="Adventure" labelFor="Adventure" />
-    <Checkbox {...args} label="Strategy" labelFor="Strategy" />
+    <Checkbox isChecked {...args} label="Action" />
+    <Checkbox {...args} label="Adventure" />
+    <Checkbox {...args} label="Strategy" />
   </div>
 )
