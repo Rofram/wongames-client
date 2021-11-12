@@ -11,7 +11,8 @@ module.exports = withPWA({
     domains: [
       'images.unsplash.com',
       'source.unsplash.com',
-      'images.gog-statics.com'
+      'images.gog-statics.com',
+      'localhost'
     ]
   }
 })
