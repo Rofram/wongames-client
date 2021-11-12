@@ -7,7 +7,7 @@ exports[`<GameCard /> should render correctly 1`] = `
   overflow: hidden;
 }
 
-.c10 {
+.c11 {
   background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
   color: #FAFAFA;
   border: 0;
@@ -34,15 +34,15 @@ exports[`<GameCard /> should render correctly 1`] = `
   font-size: 1.2rem;
 }
 
-.c10:hover {
+.c11:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
-.c10 svg {
+.c11 svg {
   width: 1.5rem;
 }
 
-.c10 svg + span {
+.c11 svg + span {
   margin-left: 0.8rem;
 }
 
@@ -102,6 +102,8 @@ exports[`<GameCard /> should render correctly 1`] = `
 
 .c3 {
   max-width: calc(100% - 2.5rem);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c4 {
@@ -156,6 +158,23 @@ exports[`<GameCard /> should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #8F8F8F;
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+  margin-right: 1.6rem;
+}
+
+.c10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 600;
+  height: 3rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #FAFAFA;
   padding: 0 0.8rem;
   background-color: #3CD3C1;
@@ -166,32 +185,34 @@ exports[`<GameCard /> should render correctly 1`] = `
 <article
   class="c0"
 >
-  <div
+  <a
     class="c1"
+    href="/game/super-mario-odyssey"
   >
     <img
-      alt="Super Mario Bros"
+      alt="Super Mario Odyssey"
       layout="fill"
-      src="https://source.unsplash.com/random"
+      src="https://images.unsplash.com/photo-1612404459571-ccef4b6588e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=140"
     />
-  </div>
+  </a>
   <div
     class="c2"
   >
-    <div
+    <a
       class="c3"
+      href="/game/super-mario-odyssey"
     >
       <h3
         class="c4"
       >
-        Super Mario Bros
+        Super Mario Odyssey
       </h3>
       <h4
         class="c5"
       >
         Nintendo
       </h4>
-    </div>
+    </a>
     <div
       class="c6"
       role="button"
@@ -218,12 +239,18 @@ exports[`<GameCard /> should render correctly 1`] = `
       class="c8"
     >
       <div
+        aria-label="Promotional Price"
         class="c9"
       >
-        R$ 150,00
+        $235.00
+      </div>
+      <div
+        class="c10"
+      >
+        $200.00
       </div>
       <button
-        class="c10"
+        class="c11"
       >
         <svg
           aria-hidden="true"
