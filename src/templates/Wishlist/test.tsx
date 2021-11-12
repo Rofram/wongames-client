@@ -20,7 +20,9 @@ describe('<Wishlist />', () => {
       screen.getByRole('heading', { name: /wishlist/i })
     ).toBeInTheDocument()
 
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(6)
+    expect(screen.getAllByText(/population zero/i)).toHaveLength(
+      props.games!.length
+    )
 
     expect(screen.getByTestId('Showcase')).toBeInTheDocument()
   })
