@@ -15,7 +15,7 @@ describe('<GameInfo />', () => {
 
     expect(screen.getByText(props.description)).toBeInTheDocument()
 
-    expect(screen.getByText(`$${props.price}`)).toBeInTheDocument()
+    expect(screen.getByText(`$${props.price}.00`)).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })
