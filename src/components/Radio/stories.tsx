@@ -20,7 +20,6 @@ export const Default: Story<RadioProps> = (args) => (
     <div style={{ padding: 10 }}>
       <Radio
         label="primeiro"
-        labelFor="primeiro"
         id="primeiro"
         name="nome"
         value="primeiro"
@@ -31,7 +30,6 @@ export const Default: Story<RadioProps> = (args) => (
     <div style={{ padding: 10 }}>
       <Radio
         label="segundo"
-        labelFor="segundo"
         id="segundo"
         name="nome"
         value="segundo"
@@ -41,7 +39,6 @@ export const Default: Story<RadioProps> = (args) => (
     <div style={{ padding: 10 }}>
       <Radio
         label="terceiro"
-        labelFor="terceiro"
         id="terceiro"
         name="nome"
         value="terceiro"

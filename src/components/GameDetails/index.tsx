@@ -6,7 +6,7 @@ import * as S from './styles'
 
 type Platform = 'linux' | 'mac' | 'windows'
 
-type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
+type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18' | 'FREE'
 
 export type GameDetailsProps = {
   developer: string
@@ -32,6 +32,7 @@ const GameDetails = ({
   }
 
   const ratings = {
+    FREE: 'FREE',
     BR0: 'FREE',
     BR10: '10+',
     BR12: '12+',
