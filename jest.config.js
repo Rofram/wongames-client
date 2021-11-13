@@ -8,8 +8,13 @@ module.exports = {
     '!src/pages/**/*.tsx',
     '!src/styles/**/*.ts',
     '!src/types/**/*.d.ts',
-    '!src/**/mock.ts'
+    '!src/**/mock.ts',
+    '!src/utils/apollo.ts',
+    '!src/types/**/*.d.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
-  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest']
+  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
+  transform: {
+    '^.+\\.(j|t)sx?$': 'esbuild-jest'
+  }
 }
