@@ -9,6 +9,7 @@ import { Close } from '@styled-icons/material-outlined/Close'
 import Slider, { SliderSettings } from 'components/Slider'
 
 import * as S from './styles'
+import getImageUrl from 'utils/getImageUrl'
 
 const commonSettings: SliderSettings = {
   arrows: true,
@@ -76,7 +77,7 @@ const Gallery = ({ items }: GalleryProps) => {
         {items.map((item, index) => (
           <Image
             role="button"
-            src={item.src}
+            src={getImageUrl(item.src)}
             key={`thumb-${index}`}
             alt={`Thumb - ${item.alt}`}
             width={295}
@@ -102,7 +103,7 @@ const Gallery = ({ items }: GalleryProps) => {
           <Slider ref={slider} settings={modalSettings}>
             {items.map((item, index) => (
               <Image
-                src={item.src}
+                src={getImageUrl(item.src)}
                 key={`gallery-${index}`}
                 alt={item.alt}
                 width={1200}

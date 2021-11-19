@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Download } from '@styled-icons/boxicons-solid/Download'
 
 import * as S from './styles'
+import getImageUrl from 'utils/getImageUrl'
 
 export type PaymentInfoProps = {
   number: string
@@ -29,7 +30,7 @@ const GameItem = ({
   <S.Wrapper>
     <S.GameContent>
       <S.ImageBox>
-        <Image src={img} alt={title} width={150} height={70} />
+        <Image src={getImageUrl(img)} alt={title} width={150} height={70} />
       </S.ImageBox>
       <S.Content>
         <S.Title>
