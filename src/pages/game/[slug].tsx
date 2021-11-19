@@ -18,7 +18,7 @@ const apolloClient = initializeApollo()
 export default function Index(props: GameTemplateProps) {
   const router = useRouter()
 
-  if (router.isFallback) return null
+  if (router.isFallback) return null // TODO: loading
 
   return <Game {...props} />
 }
