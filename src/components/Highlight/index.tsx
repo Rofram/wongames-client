@@ -1,5 +1,6 @@
 import * as S from './styles'
 import Button from 'components/Button'
+import Link from 'next/link'
 
 export type HighlightProps = {
   title: string
@@ -26,9 +27,9 @@ const Highlight = ({
       <S.Content>
         <S.Title>{title}</S.Title>
         <S.Subtitle>{subtitle}</S.Subtitle>
-        <Button as="a" href={buttonLink}>
-          {buttonLabel}
-        </Button>
+        <Link href={buttonLink} passHref>
+          <Button as="a">{buttonLabel}</Button>
+        </Link>
       </S.Content>
     </S.Wrapper>
   )
