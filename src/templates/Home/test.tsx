@@ -32,6 +32,6 @@ describe('<Home />', () => {
     expect(screen.getByTestId('BannerSlider')).toBeInTheDocument()
 
     // should render sections
-    expect(screen.getAllByTestId('Showcase')).toHaveLength(5)
+    expect(screen.getAllByTestId('Showcase')).toHaveLength(4)
   })
 })
