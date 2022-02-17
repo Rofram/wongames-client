@@ -1,14 +1,19 @@
 import * as S from './styles'
 import Button from 'components/Button'
 import Link from 'next/link'
+import getImageUrl from 'utils/getImageUrl'
 
 export type HighlightProps = {
   title: string
   subtitle: string
   buttonLabel: string
   buttonLink: string
-  backgroundImage: string
-  floatImage?: string
+  background: {
+    url: string
+  }
+  floatImage?: {
+    url: string
+  }
   alignment?: 'left' | 'right'
 }
 
@@ -17,13 +22,18 @@ const Highlight = ({
   subtitle,
   buttonLabel,
   buttonLink,
-  backgroundImage,
+  background,
   floatImage,
   alignment = 'right'
 }: HighlightProps) => {
   return (
-    <S.Wrapper backgroundImage={backgroundImage} alignment={alignment}>
-      {floatImage && <S.FloatImage src={floatImage} alt={title} />}
+    <S.Wrapper
+      backgroundImage={getImageUrl(background.url)}
+      alignment={alignment}
+    >
+      {floatImage && (
+        <S.FloatImage src={getImageUrl(floatImage.url)} alt={title} />
+      )}
       <S.Content>
         <S.Title>{title}</S.Title>
         <S.Subtitle>{subtitle}</S.Subtitle>
