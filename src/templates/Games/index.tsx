@@ -13,11 +13,11 @@ export type GamesTemplateProps = {
 
 const GamesTemplate = ({ games = [], filterItems }: GamesTemplateProps) => {
   const handleFilter = useCallback(() => {
-    return
+    return {}
   }, [])
 
   const handleShowMore = useCallback(() => {
-    return
+    return {}
   }, [])
 
   return (

@@ -1,5 +1,5 @@
 export default function getImageUrl(image: string): string {
-  if (image.startsWith('http')) {
+  if (image.startsWith('http') || image.startsWith('/img')) {
     return image
   }
 

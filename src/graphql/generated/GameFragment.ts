@@ -23,5 +23,5 @@ export interface GameFragment {
   slug: string;
   cover: GameFragment_cover | null;
   developers: GameFragment_developers[];
-  price: number;
+  price: number | null;
 }
