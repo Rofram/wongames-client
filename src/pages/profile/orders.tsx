@@ -1,6 +1,7 @@
 import Profile from 'templates/Profile'
 
-import OrdersList, { OrdersListProps } from 'components/OrdersList'
+import OrdersList from 'components/OrdersList'
+import type { OrdersListProps } from 'components/OrdersList'
 
 import ordersListMock from 'components/OrdersList/mock'
 

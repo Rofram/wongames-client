@@ -1,7 +1,8 @@
 import type { GetStaticProps, GetStaticPropsResult } from 'next'
 import { QueryHome } from 'graphql/generated/QueryHome'
 import { QUERY_HOME } from 'graphql/queries/home'
-import HomeTemplate, { HomeTemplateProps } from 'templates/Home'
+import HomeTemplate from 'templates/Home'
+import type { HomeTemplateProps } from 'templates/Home'
 
 import { initializeApollo } from 'utils/apollo'
 

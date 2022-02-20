@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-import { LogoProps } from '.'
+import type { LogoProps } from '.'
 
 const wrapperModifiers = {
   normal: css`

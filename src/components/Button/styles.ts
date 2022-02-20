@@ -1,7 +1,7 @@
 import { darken } from 'polished'
 import styled, { css, DefaultTheme } from 'styled-components'
 
-import { ButtonProps } from '.'
+import type { ButtonProps } from '.'
 
 export type WrapperProps = {
   hasIcon: boolean

@@ -2,7 +2,7 @@ import galleryMock from 'components/Gallery/mock'
 import gameMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
 
-import { GameTemplateProps } from '.'
+import type { GameTemplateProps } from '.'
 
 const mock: GameTemplateProps = {
   cover: `https://images.gog-statics.com/9717921d3268d2cad294b626756400a3a1f3e46bf153330c5581f91a5c50446a_bg_crop_1366x655.jpg`,

@@ -1,4 +1,4 @@
-import { GamesTemplateProps } from '.'
+import type { GamesTemplateProps } from '.'
 
 import gameCardMock from 'components/GameCard/mock'
 import exploreSidebarMock from 'components/ExploreSidebar/mock'

@@ -1,4 +1,5 @@
-import CardsList, { CardsListProps } from 'components/CardsList'
+import CardsList from 'components/CardsList'
+import type { CardsListProps } from 'components/CardsList'
 import Profile from 'templates/Profile'
 
 import cardsMock from 'components/PaymentOptions/mock'

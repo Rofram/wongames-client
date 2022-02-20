@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
 
-import { HeadingProps, LineColors } from '.'
+import type { HeadingProps, LineColors } from '.'
 
 export const wrapperModifiers = {
   lineLeft: (theme: DefaultTheme, lineColor: LineColors) => css`

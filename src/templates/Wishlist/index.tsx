@@ -5,7 +5,7 @@ import { Container } from 'components/Container'
 import { Grid } from 'components/Grid'
 import { Divider } from 'components/Divider'
 import GameCard, { GameCardProps } from 'components/GameCard'
-import { HighlightProps } from 'components/Highlight'
+import type { HighlightProps } from 'components/Highlight'
 import Showcase from 'components/Showcase'
 import Empty from 'components/Empty'
 

@@ -1,4 +1,4 @@
-import { CartTemplateProps } from '.'
+import type { CartTemplateProps } from '.'
 
 import gamesMock from 'components/GameCardSlider/mock'
 import highlightsMock from 'components/Highlight/mock'

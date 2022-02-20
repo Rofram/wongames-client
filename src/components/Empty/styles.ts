@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import image from 'next/image'
 
-import { EmptyProps } from '.'
+import type { EmptyProps } from '.'
 
 export const Wrapper = styled.main`
   display: flex;

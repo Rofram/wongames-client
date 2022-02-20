@@ -1,4 +1,5 @@
-import GamesTemplate, { GamesTemplateProps } from 'templates/Games'
+import GamesTemplate from 'templates/Games'
+import type { GamesTemplateProps } from 'templates/Games'
 
 import { initializeApollo } from 'utils/apollo'
 

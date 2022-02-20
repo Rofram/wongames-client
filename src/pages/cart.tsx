@@ -1,4 +1,5 @@
-import CartTemplate, { CartTemplateProps } from 'templates/Cart'
+import CartTemplate from 'templates/Cart'
+import type { CartTemplateProps } from 'templates/Cart'
 
 import cartTemplateMock from 'templates/Cart/mock'
 

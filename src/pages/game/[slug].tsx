@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router'
-import { GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next'
 import { initializeApollo } from 'utils/apollo'
-import Game, { GameTemplateProps } from 'templates/Game'
+import Game from 'templates/Game'
+import type { GameTemplateProps } from 'templates/Game'
 
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from 'graphql/queries/games'

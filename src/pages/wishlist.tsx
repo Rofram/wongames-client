@@ -1,4 +1,5 @@
-import WishlistTemplate, { WishlistTemplateProps } from 'templates/Wishlist'
+import WishlistTemplate from 'templates/Wishlist'
+import type { WishlistTemplateProps } from 'templates/Wishlist'
 
 import wishlistMock from 'templates/Wishlist/mock'
 
