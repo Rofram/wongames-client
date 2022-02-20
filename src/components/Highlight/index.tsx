@@ -27,10 +27,7 @@ const Highlight = ({
   alignment = 'right'
 }: HighlightProps) => {
   return (
-    <S.Wrapper
-      backgroundImage={getImageUrl(background.url)}
-      alignment={alignment}
-    >
+    <S.Wrapper background={getImageUrl(background.url)} alignment={alignment}>
       {floatImage && (
         <S.FloatImage src={getImageUrl(floatImage.url)} alt={title} />
       )}
