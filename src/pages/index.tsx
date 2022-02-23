@@ -5,6 +5,7 @@ import HomeTemplate from 'templates/Home'
 import type { HomeTemplateProps } from 'templates/Home'
 
 import { initializeApollo } from 'utils/apollo'
+import { bannerMapper, gameMapper } from 'utils/mappers'
 
 export default function Index(props: HomeTemplateProps) {
   return <HomeTemplate {...props} />
@@ -24,61 +25,26 @@ export const getStaticProps: GetStaticProps = async (): Promise<
   return {
     props: {
       revalidate: 60,
-      banners: banners.map((banner) => ({
-        img: banner.image?.url,
-        title: banner.title,
-        subtitle: banner.subtitle,
-        buttonLabel: banner.button?.label,
-        buttonLink: banner.button?.link,
-        ...(banner.ribbon && {
-          ribbon: banner.ribbon.text,
-          ribbonColor: banner.ribbon.color,
-          ribbonSize: banner.ribbon.size
-        })
-      })),
+      banners: bannerMapper(banners),
       sectionNewsGames: {
         title: sections?.newGames?.title,
         highlight: sections?.newGames?.highlight,
-        games: newGames.map((game) => ({
-          slug: game.slug,
-          title: game.name,
-          developer: game.developers[0].name,
-          img: game.cover?.url,
-          price: game.price
-        }))
+        games: gameMapper(newGames)
       },
       sectionMostPopular: {
         title: sections?.popularGames?.title,
         highlight: sections?.popularGames?.highlight,
-        games: sections?.popularGames?.games.map((game) => ({
-          slug: game.slug,
-          title: game.name,
-          developer: game.developers[0].name,
-          img: game.cover?.url,
-          price: game.price
-        }))
+        games: gameMapper(sections?.popularGames?.games)
       },
       sectionUpcoming: {
         title: sections?.upcomingGames?.title,
         highlight: sections?.upcomingGames?.highlight,
-        games: upcomingGames.map((game) => ({
-          slug: game.slug,
-          title: game.name,
-          developer: game.developers[0].name,
-          img: game.cover?.url,
-          price: game.price
-        }))
+        games: gameMapper(upcomingGames)
       },
       sectionFreeGames: {
         title: sections?.freeGames?.title,
         highlight: sections?.freeGames?.highlight,
-        games: freeGames.map((game) => ({
-          slug: game.slug,
-          title: game.name,
-          developer: game.developers[0].name,
-          img: game.cover?.url,
-          price: game.price
-        }))
+        games: gameMapper(freeGames)
       }
     } as HomeTemplateProps
   }
