@@ -56,7 +56,13 @@ describe('<Cart />', () => {
   })
 
   it('should render empty section if there are no items', () => {
-    renderWithTheme(<Cart {...props} items={[]} />)
+    renderWithTheme(
+      <Cart
+        recommendedGames={props.recommendedGames}
+        recommendedHighlighted={props.recommendedHighlighted}
+        cards={props.cards}
+      />
+    )
 
     expect(screen.getByTestId('Empty')).toBeInTheDocument()
   })
