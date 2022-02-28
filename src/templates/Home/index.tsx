@@ -11,8 +11,8 @@ import Showcase from 'components/Showcase'
 
 type SectionProps = {
   title: string
-  highlight?: HighlightProps
-  games?: GameCardProps[]
+  highlight?: HighlightProps | null
+  games?: GameCardProps[] | null
 }
 
 export type HomeTemplateProps = {
