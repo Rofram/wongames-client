@@ -1,5 +1,5 @@
 import type { GetStaticProps, GetStaticPropsResult } from 'next'
-import { QueryHome } from 'graphql/generated/QueryHome'
+import { QueryHome, QueryHomeVariables } from 'graphql/generated/QueryHome'
 import { QUERY_HOME } from 'graphql/queries/home'
 import HomeTemplate from 'templates/Home'
 import type { HomeTemplateProps } from 'templates/Home'
@@ -15,11 +15,15 @@ export const getStaticProps: GetStaticProps = async (): Promise<
   GetStaticPropsResult<HomeTemplateProps>
 > => {
   const apolloClient = initializeApollo()
+  const today = new Date().toISOString().slice(0, 10) // 2022-02-23
 
   const {
     data: { banners, newGames, upcomingGames, freeGames, sections }
-  } = await apolloClient.query<QueryHome>({
-    query: QUERY_HOME
+  } = await apolloClient.query<QueryHome, QueryHomeVariables>({
+    query: QUERY_HOME,
+    variables: {
+      date: today
+    }
   })
 
   return {
