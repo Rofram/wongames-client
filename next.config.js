@@ -1,8 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const withPWA = require('next-pwa')
-const isProd = process.env.NODE_ENV === 'production'
 const withTM = require('next-transpile-modules')(['@uiball/loaders'])
 const withPlugins = require('next-compose-plugins')
+
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = withPlugins([withPWA,withTM], {
   pwa: {
