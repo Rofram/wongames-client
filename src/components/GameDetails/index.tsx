@@ -4,9 +4,9 @@ import Heading from 'components/Heading'
 import MediaMatch from 'components/MediaMatch'
 import * as S from './styles'
 
-type Platform = 'linux' | 'mac' | 'windows'
+export type Platform = 'linux' | 'mac' | 'windows'
 
-type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18' | 'FREE'
+export type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18' | 'FREE'
 
 export type GameDetailsProps = {
   developer: string
