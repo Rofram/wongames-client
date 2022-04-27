@@ -6,31 +6,33 @@ import { initializeApollo } from 'utils/apollo'
 import exploreSidebarMock from 'components/ExploreSidebar/mock'
 import { QUERY_GAMES } from 'graphql/queries/games'
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
+import Head from 'next/head'
 
 export default function GamesPage(props: GamesTemplateProps) {
-  return <GamesTemplate {...props} />
+  return (
+    <>
+      <Head>
+        <title>Wongames | Explore</title>
+      </Head>
+      <GamesTemplate {...props} />
+    </>
+  )
 }
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
-  const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
+  await apolloClient.query<QueryGames, QueryGamesVariables>({
     query: QUERY_GAMES,
     variables: {
-      limit: 9
+      limit: 15
     }
   })
 
   return {
     props: {
       revalidate: 60,
-      games: data.games.map((game) => ({
-        title: game.name,
-        slug: game.slug,
-        developer: game.developers[0]?.name || 'desconhecido',
-        img: game.cover!.url,
-        price: game.price
-      })),
+      initialApolloState: apolloClient.cache.extract(),
       filterItems: exploreSidebarMock
     }
   }
