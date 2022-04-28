@@ -5,8 +5,11 @@ import highlightsMock from 'components/Highlight/mock'
 
 const mock: WishlistTemplateProps = {
   games: gamesMock,
-  recommendedGames: gamesMock,
-  recommendedHighlightedGames: highlightsMock
+  recommendedGames: {
+    title: 'You Make like these games',
+    highlighted: highlightsMock,
+    games: gamesMock
+  }
 }
 
 export default mock

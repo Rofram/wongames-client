@@ -27,8 +27,8 @@ const Wishlist = ({ games = [], recommendedGames }: WishlistTemplateProps) => (
 
       {games.length > 0 ? (
         <Grid>
-          {games.map((game, index) => (
-            <GameCard key={`wishlist-${index}`} {...game} />
+          {games.map((game) => (
+            <GameCard key={game.slug} {...game} />
           ))}
         </Grid>
       ) : (
@@ -43,7 +43,7 @@ const Wishlist = ({ games = [], recommendedGames }: WishlistTemplateProps) => (
     </Container>
 
     <Showcase
-      title={recommendedGames.title}
+      title={recommendedGames.title ?? 'You Make like these games'}
       games={recommendedGames.games}
       highlight={recommendedGames.highlighted}
     />
