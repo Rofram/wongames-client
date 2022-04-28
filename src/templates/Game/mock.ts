@@ -1,5 +1,5 @@
 import galleryMock from 'components/Gallery/mock'
-import gameMock from 'components/GameCardSlider/mock'
+import gamesMock from 'components/GameCardSlider/mock'
 import highlightMock from 'components/Highlight/mock'
 
 import type { GameTemplateProps } from '.'
@@ -37,9 +37,16 @@ const mock: GameTemplateProps = {
     platforms: ['windows', 'linux', 'mac'],
     rating: 'BR18'
   },
-  upcomingGames: gameMock,
-  upcomingHighlight: highlightMock,
-  recommendedGames: gameMock
+  upcomingGames: {
+    title: 'Upcoming Games',
+    games: gamesMock,
+    highlight: highlightMock
+  },
+  recommendedGames: {
+    title: 'You Make like these games',
+    highlighted: highlightMock,
+    games: gamesMock
+  }
 }
 
 export default mock
