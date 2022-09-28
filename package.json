@@ -45,7 +45,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-slick": "^0.28.1",
-    "styled-components": "5.3.1",
+    "styled-components": "5.3.6",
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
@@ -61,7 +61,7 @@
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.33",
     "@types/react-slick": "^0.23.6",
-    "@types/styled-components": "^5.1.14",
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "apollo": "^2.33.8",
